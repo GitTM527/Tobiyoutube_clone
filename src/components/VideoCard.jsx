@@ -15,16 +15,16 @@ const VideoCard = ({ video: { id: {videoId }, snippet}}) => {
           sx={{ width: 358, height: 180}}
         />
       </Link>
-      <CardContent sx={{ backgroundColor: '1e1e1e', height: '106px'}}>
+      <CardContent sx={{ backgroundColor: '#1e1e1e', height: '106px'}}>
         <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
-          <Typography varient="subtitle1" fontWeight="bold" color="#FFF">
+          <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
             {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
           </Typography>
         </Link>
         <Link to={snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannelUrl}>
-          <Typography varient="subtitle1" fontWeight="bold" color="gray">
-            {snippet?.ChannelTitle.slice(0, 60) || demoChannelTitle.slice(0, 60)}
-            <CheckCircle sx={{ fontSize: 12, color: 'gray', ml: '5' }} />
+          <Typography variant="subtitle2" fontWeight="bold" color="gray">
+            {snippet?.ChannelTitle || demoChannelTitle}
+            <CheckCircle sx={{ fontSize: 12, color: 'gray', ml: '5px' }} />
           </Typography>
         </Link>
       </CardContent>
